@@ -7,6 +7,7 @@ import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
+import java.util.Arrays;
 import java.util.Scanner;
 import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
@@ -43,6 +44,9 @@ public class GUIManual extends JFrame {
     private JPanel jPanelMenuHome;
     private JLabel btnHome;
     
+    private JPanel jPanelsesion;
+    private JLabel btnsesion;
+    
     private JPanel jPanelMenuSelecciones;
     private JLabel btnSelecciones;
     
@@ -64,6 +68,9 @@ public class GUIManual extends JFrame {
     
     private boolean haySesion;
     private String [][] usuarios;  
+    
+    String usuario = "";
+    String contraseña = "";
     
     
     public GUIManual() {
@@ -126,12 +133,18 @@ public class GUIManual extends JFrame {
         jPanelMenuDashboardRes = new JPanel();
         btnDashboardRes = new JLabel();
         
+        jPanelsesion = new JPanel();
+        btnsesion = new JLabel();
+         
+        
         // Pinta el logo de la aplicación
         pintarLogo();
         
         // Pinta la opción de menú del Home
-        pintarMenuHome();
+         pintarSesion();
         
+        pintarMenuHome();
+          
         // Pinta la opción de Menú de las Selecciones
         pintarMenuSelecciones();
         
@@ -223,6 +236,48 @@ public class GUIManual extends JFrame {
         jPanelMain.revalidate();
     }
     
+    private void pintarSesion() {
+         
+        
+        btnsesion.setText("SESION");
+        btnsesion.setForeground(new java.awt.Color(255, 255, 255));
+        
+        JLabel vistas = new JLabel();
+        
+        jPanelsesion.setBackground(new java.awt.Color(17, 41, 63));
+        jPanelsesion.setPreferredSize((new java.awt.Dimension(220, 35)));
+        jPanelsesion.setLayout(new BorderLayout(15, 0));
+        jPanelsesion.add(vistas, BorderLayout.WEST);
+        jPanelsesion.add(btnsesion, BorderLayout.CENTER);
+        jPanelMenu.add(jPanelsesion);
+        
+        btnsesion.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                System.out.println("SESION");
+                
+               accioningresosesion();     
+                
+            }
+        });
+    }
+    
+     private void accioningresosesion() {
+         
+         jLabelTop.setText("INICIO DE SESION");
+         
+         usuario=JOptionPane.showInputDialog("ingrese el nombre del usuario");
+         contraseña=JOptionPane.showInputDialog("la contraseña");
+         
+         for (int i = 0; i < usuarios.length; i++) {
+             
+         if (usuarios [0][0].equals(usuarios[0][0] = "usuario1") && usuarios[0][1].equals(usuarios[0][1] = "Password1") ) {
+              haySesion = true;  
+         }
+         
+         }     
+         
+         
+     }
     /**
      * Función que se encarga de ajustar los elementos gráficos que componente la opción de navegación de SELECCIONES
      * Define estilos, etiquetas, iconos que decoran la opción del Menú. 
