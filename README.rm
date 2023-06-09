@@ -1,1 +1,8 @@
 GABRIELA CONTRERAS GARCIA
+
+Gabriela pensaste bien la solución pero no aplicaste correctamemnte la lógica de programación. 
+
+La solución es válida para un solo usuario dentro de la matriz de usuarios definida. 
+En el ciclo for debiste usar la variable i dentro de las validaciones de los if. 
+
+Los usuario debieron validarse dinámicamente a medida que el for se iba ejecutando y no directamente usando los valores 0 y 1 
